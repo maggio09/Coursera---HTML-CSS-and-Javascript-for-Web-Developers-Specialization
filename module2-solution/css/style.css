@@ -1,72 +1,74 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  height: 100%;
-  width: 100%;
-  font-family: cursive;
-}
-html{
-  font-size: 16px;
-}
-section h2{
-  font-size: 1.875em;
-  position: relative;
-  float: right;
-  top: 0;
-  text-align: center;
-  border: 2px solid black;
-  padding: 0 50px;
-}
-p{
-  font-size: 1.5em;
-  margin: 1.75em;
-}
-header{
-    margin: 3em auto 5em auto;
-}
-header h1{
-    text-align: center;
-    font-size: 2.625em;
-    color: rgb(47, 47, 47);
-}
-.container{
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-.section{
-  width: 30%;
-  border: 2px solid black;
-  text-wrap: wrap;
-  background-color: rgb(153, 153, 153);
   box-sizing: border-box;
 }
 
-@media screen and ((min-width:768px) and (max-width:991px)) {
-  .s1, .s2{
-    width: 45%;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.row {
+  width: 100%;
+}
+
+/* 기본 (모바일 우선) */
+.col {
+  background-color: #ccc;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 40px 15px 15px 15px;
+  position: relative;
+}
+
+/* 섹션 제목 */
+.section-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px;
+  font-weight: bold;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.chicken .section-title {
+  background-color: #f8b8b8;
+}
+
+.beef .section-title {
+  background-color: #d9534f;
+  color: white;
+}
+
+.sushi .section-title {
+  background-color: #f0e68c;
+}
+
+/* Tablet view (768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .col {
+    float: left;
   }
-  .s3{
-    width: 94%;
-    margin: 4% 0;
+
+  .col:nth-child(1),
+  .col:nth-child(2) {
+    width: 47%;
+  }
+
+  .col:nth-child(3) {
+    width: 96%;
+    clear: both;
   }
 }
-@media screen and (max-width: 767px) {
-  .section{
-    width: 80%;
-    margin-bottom: 30px;
+
+/* Desktop view (992px 이상) */
+@media (min-width: 992px) {
+  .col {
+    width: 31%;
+    float: left;
   }
-}
-#pink{
-  background-color: pink;
-}
-#red{
-  background-color: rgb(209, 49, 49);
-}
-#yellow{
-  background-color: rgb(227, 227, 144);
 }
